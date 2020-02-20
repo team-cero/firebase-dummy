@@ -10,11 +10,18 @@ function renderUser(doc){
     let carBrand = document.createElement('span');
     let carModel = document.createElement('span');
     
-    li.setAttribute('data-id', doc.id)
-    name.textContent = doc.data().name
-    distance.textContent = doc.data().distance
-    carBrand.textContent = doc.data().carBrand
-    carModel.textContent = doc.data().carModel
+    li.setAttribute('data-id', doc.id);
+    name.textContent = doc.data().name;
+    distance.textContent = doc.data().distance;
+    carBrand.textContent = doc.data().carBrand;
+    carModel.textContent = doc.data().carModel;
+
+    li.appendChild(name);
+    li.appendChild(distance);
+    li.appendChild(carBrand);
+    li.appendChild(carModel);
+
+    userList.appendChild(li)
 
 }
 
