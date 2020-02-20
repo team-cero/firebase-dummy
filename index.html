@@ -18,16 +18,22 @@
 
         </div>
 
-        <script src="app.js">
-            <!-- The core Firebase JS SDK is always required and must be listed first -->
-            <script src="/__/firebase/7.8.2/firebase-app.js"></script>
-
-            <script src="/__/firebase/7.8.2/firebase-analytics.js"></script>
-
-            <!-- Initialize Firebase -->
-            <script src="/__/firebase/init.js"></script>            
-
+        <script>
+            const firebaseConfig = {
+                apiKey: "AIzaSyBkYz2qfsXs3BALeKTedKLA63n9Kf9aK98",
+                authDomain: "cero-267213.firebaseapp.com",
+                databaseURL: "https://cero-267213.firebaseio.com",
+                projectId: "cero-267213",
+                storageBucket: "cero-267213.appspot.com",
+                messagingSenderId: "443452518604",
+                appId: "1:443452518604:web:ae6bbcceb16a4579705269",
+                measurementId: "G-H1VD7FL9GC"
+            };
+            
+            firebase.initializeApp(firebaseConfig)
+            const db = firebase.firestore()
 
         </script>
+        <script src="app.js"></script>
     </body>
 </html>
