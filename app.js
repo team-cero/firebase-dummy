@@ -1,4 +1,8 @@
-// for sync, then
+const userList = document.querySelector('#user-list');
+
+
 db.collection('users').get().then((snapshot) => {
-    console.log(snapshot.docs);
+    snapshot.docs.forEach(doc => {
+        console.log(doc.data())
+    })
 })
