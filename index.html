@@ -1,8 +1,8 @@
 <html>
     <head>
-        <script defer src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
-        <script defer src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
-        <script defer src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <!-- <script defer src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script> -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
 
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -19,7 +19,8 @@
         </div>
 
         <script>
-            const firebaseConfig = {
+
+            var firebaseConfig = {
                 apiKey: "AIzaSyBkYz2qfsXs3BALeKTedKLA63n9Kf9aK98",
                 authDomain: "cero-267213.firebaseapp.com",
                 databaseURL: "https://cero-267213.firebaseio.com",
@@ -29,10 +30,12 @@
                 appId: "1:443452518604:web:ae6bbcceb16a4579705269",
                 measurementId: "G-H1VD7FL9GC"
             };
-            
-            firebase.initializeApp(firebaseConfig)
-            const db = firebase.firestore()
 
+            // initialize firebase
+            firebase.initializeApp(firebaseConfig);
+            
+            const db = firebase.firestore();
+            db.settings({ });
         </script>
         <script src="app.js"></script>
     </body>
