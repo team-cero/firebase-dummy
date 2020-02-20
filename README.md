@@ -1,7 +1,7 @@
 # [Firebase main page](https://firebase.google.com/https://firebase.google.com/)
 
 
-## Cloud firestore
+## [Cloud firestore](https://firebase.google.com/docs/functions)
 
 ### Framework - Visual Studio Code
 - [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - library
