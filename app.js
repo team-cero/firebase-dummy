@@ -21,7 +21,7 @@ function renderUser(doc){
     li.appendChild(carBrand);
     li.appendChild(carModel);
 
-    userList.appendChild(li)
+    userList.appendChild(li )
 
 }
 
