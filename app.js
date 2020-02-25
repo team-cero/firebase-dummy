@@ -1,5 +1,5 @@
 const userList = document.querySelector('#user-list');
-
+const form = document.querySelector("#add-car-form");
 
 // create html element, put data inside and render them to the dom
 
@@ -24,9 +24,21 @@ function renderUser(doc){
     userList.appendChild(li )
 
 }
-
+//getting data
 db.collection('users').get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderUser(doc);
     })
+})
+
+// saving data
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('users').add({
+        name: form.name.value,
+        distance: form.distance.value,
+        carBrand: form.carBrand.value,
+        carModel: form.carModel.value
+    });
+
 })
