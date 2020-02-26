@@ -22,9 +22,18 @@ function renderUser(doc){
     li.appendChild(distance);
     li.appendChild(carBrand);
     li.appendChild(carModel);
+    li.appendChild(cross)
 
     userList.appendChild(li )
 
+    //deleting data
+    cross.addEventListener('click', (e) =>{
+        e.stopPropagation();
+        let id = e.target.parentElement.getAttribute('data-id');
+        db.collection('users').doc(id).delete();
+
+
+        })
 }
 //getting data
 db.collection('users').get().then((snapshot) => {
