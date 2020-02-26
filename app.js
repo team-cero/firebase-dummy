@@ -9,12 +9,14 @@ function renderUser(doc){
     let distance = document.createElement('span');
     let carBrand = document.createElement('span');
     let carModel = document.createElement('span');
+    let cross = document.createElement('div');
     
     li.setAttribute('data-id', doc.id);
     name.textContent = doc.data().name;
     distance.textContent = doc.data().distance;
     carBrand.textContent = doc.data().carBrand;
     carModel.textContent = doc.data().carModel;
+    cross.textContent = 'x';
 
     li.appendChild(name);
     li.appendChild(distance);
@@ -40,5 +42,9 @@ form.addEventListener('submit', (e) => {
         carBrand: form.carBrand.value,
         carModel: form.carModel.value
     });
+    form.name.value = '';
+    form.distance.value = '';
+    form.carBrand.value = '';
+    form.carModel.value = '';
 
 })
