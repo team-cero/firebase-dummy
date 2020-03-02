@@ -36,11 +36,11 @@ function renderUser(doc){
         })
 }
 //getting data
-db.collection('users').orderBy('distance').get().then((snapshot) => {
-    snapshot.docs.forEach(doc => {
-        renderUser(doc);
-    })
-})
+// db.collection('users').where('carBrand', '==', 'VW').orderBy('distance').get().then((snapshot) => {
+//     snapshot.docs.forEach(doc => {
+//         renderUser(doc);
+//     })
+// })
 
 // saving data
 form.addEventListener('submit', (e) => {
@@ -57,3 +57,21 @@ form.addEventListener('submit', (e) => {
     form.carModel.value = '';
 
 })
+
+// real-time database
+db.collection('users').orderBy('distance').onSnapshot( snapshot => {
+    let changes = snapshot.docChanges();
+    //  console.log(changes)
+    changes.forEach( change => {
+        // get the data inside the document
+        // console.log(change.doc.data())
+
+        // check the type of change
+        if(change.type == 'added'){
+            renderUser(change.doc);
+        } else if  (change.type == 'removed'){
+            let li = userList.querySelector('[data-id=' + change.doc.id + ']');
+            userList.removeChild(li);
+        }
+    });
+});
