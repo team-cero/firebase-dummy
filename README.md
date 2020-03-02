@@ -27,6 +27,14 @@
         });
     });
 
+**update**: 1. grab collection 2. individual document id, 3. update method
+    
+    db.collection('users').doc('kLSlKz8jIWe9NKP71LYP').update({ name: 'Jiwon Kim'})
+
+**set** totally override the *whole* document.
+
+    db.collection('users').doc('kLSlKz8jIWe9NKP71LYP').set({ name: 'Jiwon Kim'})
+
 
 ### Framework - Visual Studio Code
 - [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - library

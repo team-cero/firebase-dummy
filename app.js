@@ -71,7 +71,7 @@ db.collection('users').orderBy('distance').onSnapshot( snapshot => {
             renderUser(change.doc);
         } else if  (change.type == 'removed'){
             let li = userList.querySelector('[data-id=' + change.doc.id + ']');
-            userList.removeChild(li);
+            usersList.removeChild(li);
         }
     });
 });
