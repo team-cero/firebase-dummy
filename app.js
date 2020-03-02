@@ -36,7 +36,7 @@ function renderUser(doc){
         })
 }
 //getting data
-db.collection('users').get().then((snapshot) => {
+db.collection('users').where("distance", ">=", 700).get().then((snapshot) => {
     snapshot.docs.forEach(doc => {
         renderUser(doc);
     })
